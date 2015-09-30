@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	h1= title
+	p
+
+	form(action="", method="post")
+		table.table.table-bordered
+			tr
+				th itemname
+				th quantity
+			tr
+				td <input type"text", name="itemname",required="true", placeholder="itemname", pattern='[A-Za-z\\s]*'/>
+				td <input type="text", name="quantity", required="true", placeholder="quantity", pattern='[0-9\\s]*'/>
+				td <button type="submit">Add item</button>
+
+	table.table.table-bordered
+		tr
+			th itemname
+			th quantity
+			th Update
+			th Action
+		-	items.forEach(function(find){
+		tr
+			td=find.itemname
+			td #{find.quantity}
+			td
+				a(href="/p/edit/"+find._id) Edit
+			td
+				a(href="/p/delete/"+find._id) Delete
+		-	});

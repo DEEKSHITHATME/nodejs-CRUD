@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  form(action='',method='post')
+    label(for='itemname') itemname:
+    input(type='text', name='itemname',class="form-control", required="true",id='itemname', placeholder='ItemName', pattern='[A-Za-z\\s]*', value=items.itemname)
+    br
+    label(for='quantity') Quantity:
+    input(type='text', name='quantity',class="form-control", id='quantity', required="true",placeholder='Qunatity', pattern='[0-9\\s]*', value=items.quantity)
+    br
+    input(type='submit', value='Save', class="btn btn-success")
+   
+     
+
+
+
+
+
+
+ 
+
+
+
+
+  
